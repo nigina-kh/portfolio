@@ -1,0 +1,256 @@
+/* ===== GLOBAL ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    color: #ff6fb5;
+    margin: 0;
+    padding: 30px;
+    text-align: center;
+    image-rendering: pixelated;
+    cursor: url("https://i.imgur.com/TO2a6Ye.png"), auto; /* 8bit cursor */
+}
+
+/* ===== BACKGROUND ===== */
+
+.background {
+    background: white;
+}
+
+
+/* ===== MAIN CONTAINER ===== */
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px;
+    background: rgba(255, 240, 248, 0.88);
+    border: 6px solid #ff8ac3;
+    box-shadow: 0 0 0 6px #ff6fb5;
+    position: relative;
+    z-index: 10;
+}
+
+/* ===== TEXT ===== */
+
+h1, h2 {
+    color: #ff4fa3;
+    text-shadow: 3px 3px #ffb7d5;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+p {
+    line-height: 1.8;
+    font-size: 12px;
+    color: #ff5fae;
+}
+
+.subtitle {
+    font-size: 10px;
+    color: #ff92c7;
+    margin-bottom: 30px;
+}
+
+/* ===== SOCIAL BUTTONS (Pixel Gaming Style) ===== */
+
+.social-buttons {
+    margin-bottom: 35px;
+}
+
+.pixel-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 10px;
+    background: #ff8ac3;
+    color: white;
+    text-decoration: none;
+    border: 4px solid #ff54a7;
+    box-shadow: 0 0 0 4px #ff8ac3;
+    font-size: 12px;
+    transition: transform 0.1s ease, background 0.15s;
+    image-rendering: pixelated;
+}
+
+.pixel-btn:hover {
+    background: #ff6fb5;
+}
+
+.pixel-btn:active {
+    transform: scale(0.90);
+    background: #ff54a7;
+    box-shadow: 0 0 0 4px #ff54a7;
+}
+
+/* ===== SECTIONS ===== */
+
+section {
+    margin-top: 50px;
+}
+
+/* ===== SKILLS TAGS ===== */
+
+.skills {
+    margin-top: 15px;
+}
+
+.tag {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    background: #ffb6d9;
+    color: #fff;
+    border: 3px solid #ff7fbc;
+    font-size: 10px;
+    box-shadow: 0 0 0 3px #ffb6d9;
+    image-rendering: pixelated;
+}
+
+/* ===== PROJECT CARDS ===== */
+
+.project-card {
+    background: #ffe1f0;
+    border: 4px solid #ff94c6;
+    padding: 20px;
+    margin-top: 25px;
+    box-shadow: 0 0 0 4px #ffc3dd;
+    text-align: left;
+    font-size: 11px;
+}
+
+.project-card h3 {
+    color: #ff4fa3;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px #ffb7d5;
+}
+
+.project-card p {
+    color: #ff5fae;
+}
+
+/* ===== SMALL BUTTONS INSIDE PROJECTS ===== */
+
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    margin-top: 10px;
+    background: #ff8ac3;
+    color: white;
+    text-decoration: none;
+    border: 3px solid #ff54a7;
+    box-shadow: 0 0 0 3px #ff8ac3;
+    font-size: 10px;
+    transition: transform 0.1s ease;
+    image-rendering: pixelated;
+}
+
+.btn:active {
+    transform: scale(0.90);
+    background: #ff54a7;
+}
+
+/* ===== FALLING PIXEL HEARTS ===== */
+
+.hearts {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url("https://i.imgur.com/u7S3k5Y.png");
+    background-size: cover;
+    animation: fall 7s linear infinite;
+    image-rendering: pixelated;
+    opacity: 0.85;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* ===== RETRO GAME SCREEN EFFECT ===== */
+
+.screen-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 30;
+    mix-blend-mode: overlay;
+    opacity: 0.25;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 150, 200, 0.15) 0px,
+        rgba(255, 150, 200, 0.15) 2px,
+        rgba(0, 0, 0, 0.1) 3px,
+        rgba(0, 0, 0, 0.1) 4px
+    );
+}
+
+.glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 31;
+    background: radial-gradient(circle at center,
+        rgba(255, 200, 230, 0.2) 0%,
+        rgba(255, 100, 180, 0.05) 40%,
+        rgba(0, 0, 0, 0) 80%
+    );
+}
+/* ===== QA LIST STYLE ===== */
+
+.project-card ul {
+    margin-top: 12px;
+    margin-left: 15px;
+}
+
+.project-card li {
+    font-size: 11px;
+    margin-bottom: 8px;
+    color: #ff5fae;
+    list-style: "💗 ";
+    image-rendering: pixelated;
+}
+/* ===== CUSTOM PIXEL CURSOR ===== */
+html, body {
+    cursor: url("assets/cursor.png") 0 0, auto;
+}
+
+body, a, button, .pixel-btn, .btn {
+    cursor: url("assets/cursor.png") 0 0, auto !important;
+}
+
