@@ -9,37 +9,49 @@
 
 <body>
 
+    <!-- DARK MODE BUTTON -->
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+    <!-- Falling hearts -->
+    <div class="hearts"></div>
+
+    <!-- Retro screen effects -->
+    <div class="screen-effect"></div>
+    <div class="glow"></div>
+
+    <!-- Background (optional) -->
     <div class="background"></div>
 
+    <!-- Main Content -->
     <div class="container">
 
         <h1>Nigina Khasanova ♡</h1>
-        <p class="subtitle">Web Developer • Backend Student • QA Enthusiast</p>
+        <p class="subtitle">Web Developer • Java & Python Student</p>
 
         <!-- SOCIAL BUTTONS -->
         <div class="social-buttons">
-            <a href="https://github.com/Nigina-kh" target="_blank" class="pixel-btn">GitHub</a>
-            <a href="https://www.linkedin.com/in/nigina-khasanova" target="_blank" class="pixel-btn">LinkedIn</a>
-            <a href="https://t.me/ngnkhsnv" target="_blank" class="pixel-btn">Telegram</a>
+            <a class="pixel-btn" href="https://github.com/Nigina-kh" target="_blank">GitHub ♡</a>
+            <a class="pixel-btn" href="https://www.linkedin.com/in/nigina-khasanova" target="_blank">LinkedIn ☆</a>
+            <a class="pixel-btn" href="https://t.me/ngnkhsnv" target="_blank">Telegram ✧</a>
         </div>
+
+        <!-- ABOUT -->
+        <section>
+            <h2>About Me</h2>
+            <p>
+                Motivated junior developer focused on backend and frontend development.
+                I work with Java, Python, HTML, CSS, JavaScript (basic), and Git.
+                I enjoy building websites, games, and small applications.
+                Always learning and improving — now looking for an internship to grow professionally.
+            </p>
+        </section>
 
         <!-- CONTACT -->
         <section>
             <h2>Contact</h2>
-            <p><strong>Phone:</strong> +998-91-191-24-07</p>
-            <p><strong>Email:</strong> nigina.khasanova.06@gmail.com</p>
-            <p><strong>Location:</strong> Tashkent, Uzbekistan</p>
-        </section>
-
-        <!-- PROFESSIONAL SUMMARY -->
-        <section>
-            <h2>Professional Summary</h2>
-            <p>
-                Motivated student focused on backend and frontend development with hands-on
-                experience in Python, Java, HTML, CSS, and QA fundamentals.  
-                Experienced in building websites, academic projects, and simple applications.
-                Always learning and interested in gaining real-world internship experience in IT.
-            </p>
+            <p>Email: <strong>nigina.khasanova.06@gmail.com</strong></p>
+            <p>Phone: <strong>+998 91 191 24 07</strong></p>
+            <p>Telegram: <strong>@ngnkhsnv</strong></p>
         </section>
 
         <!-- SKILLS -->
@@ -53,9 +65,7 @@
                 <span class="tag">JavaScript (basic)</span>
                 <span class="tag">Git</span>
                 <span class="tag">SQL</span>
-                <span class="tag">REST APIs</span>
-                <span class="tag">QA Testing</span>
-                <span class="tag">Debugging</span>
+                <span class="tag">REST API basics</span>
                 <span class="tag">OOP</span>
             </div>
         </section>
@@ -65,59 +75,71 @@
             <h2>Projects</h2>
 
             <div class="project-card">
-                <h3>🕹️ Labyrinth Game — Python + Pygame</h3>
+                <h3>🕹️ Labyrinth Game (Python + Pygame)</h3>
                 <p>
-                    Developed a 2D maze game with moving enemies, portals, collisions, bullets,
-                    and basic physics. Applied OOP and event-handling concepts.
+                    A 2D maze game built with Python & Pygame.  
+                    Includes collision logic, enemy movement, bullets, and win conditions.
                 </p>
-                <a href="https://github.com/nigina-kh/python-labyrinth-game" class="btn">View on GitHub</a>
+                <a href="https://github.com/Nigina-kh" class="pixel-btn project-btn" target="_blank">
+                      View on GitHub
+                </a>
+
             </div>
 
             <div class="project-card">
-              <h3>📄 QA Testing Portfolio</h3>
-                 <p>
-                   Performed manual software testing as part of a structured course project.
-                   Created detailed test cases, checklists, defect reports, and exploratory sessions.
-                   Practiced UI testing, requirements verification, and bug documentation.
-                 </p>
+                <h3>🌐 Responsive Website</h3>
+                <p>Multi-page responsive website created from a Figma design.</p>
+            </div>
 
-                 <ul>
-                     <li>Wrote positive & negative test cases</li>
-                     
-                     <li>Created checklists for UI & functionality</li>
-        
-                     <li>Logged bugs with steps and screenshots</li>
-        
-                     <li>Performed exploratory testing</li>
-                 </ul>
-           </div>
-            
-
-
+            <div class="project-card">
+                <h3>🎀 Small Java / Python Projects</h3>
+                <p>Console apps, algorithms, and exercises created during university coursework.</p>
+            </div>
         </section>
 
         <!-- EDUCATION -->
         <section>
             <h2>Education</h2>
+            <p><strong>B.Sc. in Computer Science</strong><br>
+            IT Park University — 2024–Present
+            </p>
             <p>
-                <strong>Bachelor of Science in Computer Science</strong><br>
-                IT Park University — 2024–Present<br>
-                Major: Backend Development <br>
-                Coursework: Python, Web Development, Databases
+                Backend major.  
+                Python • Web Dev • Databases  
+                Certificates: Python (Algoritmika), IELTS 6.5
             </p>
         </section>
 
-        <!-- ADDITIONAL -->
+        <!-- EXTRA -->
         <section>
             <h2>Additional</h2>
-            <p><strong>Python Certificate Course — Algoritmika Educational Centre</strong></p>
-            <p><strong>IELTS 6.5</strong></p>
-
-            <p><strong>Business Management Conference — Dubai, UAE</strong></p>
-            <p><strong>Marketing & Audience Growth Seminar — Tashkent</strong></p>
+            <p>
+                Attended Business Management Conference in Dubai.  
+                Participated in Digital Marketing Seminar in Tashkent.
+            </p>
         </section>
 
     </div>
+
+    <!-- HEARTS SCRIPT -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (5 + Math.random() * 4) + "s";
+            document.querySelector(".hearts").appendChild(heart);
+            setTimeout(() => heart.remove(), 9000);
+        }
+        setInterval(createHeart, 500);
+
+        /* DARK MODE */
+        function toggleTheme() {
+            document.body.classList.toggle("dark-mode");
+            const btn = document.querySelector(".theme-toggle");
+            btn.innerHTML = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+        }
+    </script>
 
 </body>
 </html>

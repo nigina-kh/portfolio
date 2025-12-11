@@ -9,194 +9,256 @@
 body {
     font-family: 'Press Start 2P', cursive;
     color: #ff6fb5;
-    margin: 0;
-    padding: 30px;
-    text-align: center;
+    background: #ffffff;
     image-rendering: pixelated;
-    cursor: url("https://i.imgur.com/TO2a6Ye.png"), auto; /* 8bit cursor */
+    padding: 40px;
+    text-align: center;
+    cursor: url("assets/cursor.png") 0 0, auto;
 }
 
-/* ===== BACKGROUND ===== */
-
-.background {
-    background: white;
+section {
+    margin-top: 80px;
 }
 
 
-/* ===== MAIN CONTAINER ===== */
+/* =========================
+       DARK MODE
+========================= */
+
+body.dark-mode {
+    background: #121212;
+    color: #d8a9f0;
+}
+
+body.dark-mode .container {
+    background: #1e1e1e;
+    border-color: #c953e9;
+    box-shadow: 0 0 0 6px #a82ecb;
+}
+
+body.dark-mode h1,
+body.dark-mode h2 {
+    color: #f08fff;
+    text-shadow: 3px 3px #702a84;
+}
+
+body.dark-mode p {
+    color: #c989e2;
+}
+
+body.dark-mode .tag {
+    background: #b44ed8;
+    border-color: #9226b8;
+    box-shadow: 0 0 0 3px #b44ed8;
+    color: white;
+}
+
+body.dark-mode .project-card {
+    background: #1b1b1b;
+    border-color: #c953e9;
+    box-shadow: 0 0 0 4px #a82ecb;
+}
+
+body.dark-mode .pixel-btn,
+body.dark-mode .btn,
+body.dark-mode .project-btn {
+    background: #c953e9;
+    border-color: #a82ecb;
+    box-shadow: 0 0 0 4px #c953e9;
+    color: #fff;
+}
+
+
+/* =========================
+         THEME BUTTON
+========================= */
+
+.theme-toggle {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    padding: 12px 14px;
+    font-size: 18px;
+    background: #ff8ac3;
+    border: 4px solid #ff54a7;
+    box-shadow: 0 0 0 4px #ff8ac3;
+    cursor: pointer;
+    z-index: 999;
+    color: white;
+    font-family: 'Press Start 2P';
+    transition: transform 0.1s ease;
+}
+
+.theme-toggle:active {
+    transform: scale(0.9);
+}
+
+
+/* =========================
+      MAIN CONTAINER
+========================= */
 
 .container {
     max-width: 900px;
     margin: auto;
-    padding: 40px;
-    background: rgba(255, 240, 248, 0.88);
+    padding: 45px;
+    background: #ffe6f5;
     border: 6px solid #ff8ac3;
     box-shadow: 0 0 0 6px #ff6fb5;
     position: relative;
     z-index: 10;
 }
 
-/* ===== TEXT ===== */
 
-h1, h2 {
-    color: #ff4fa3;
-    text-shadow: 3px 3px #ffb7d5;
-    margin-bottom: 20px;
-}
+/* =========================
+           TEXT
+========================= */
 
 h1 {
     font-size: 28px;
+    text-shadow: 3px 3px #ffb7d5;
+    margin-bottom: 20px;
+    color: #ff4fa3;
 }
 
 h2 {
     font-size: 16px;
+    text-shadow: 2px 2px #ffc4de;
+    margin-bottom: 20px;
+    color: #ff4fa3;
 }
 
 p {
-    line-height: 1.8;
     font-size: 12px;
+    line-height: 1.8;
     color: #ff5fae;
 }
 
-.subtitle {
-    font-size: 10px;
-    color: #ff92c7;
-    margin-bottom: 30px;
-}
 
-/* ===== SOCIAL BUTTONS (Pixel Gaming Style) ===== */
+/* =========================
+        BUTTONS
+========================= */
 
-.social-buttons {
-    margin-bottom: 35px;
-}
-
-.pixel-btn {
+.pixel-btn,
+.btn,
+.project-btn {
     display: inline-block;
-    padding: 12px 20px;
-    margin: 10px;
+    padding: 14px 22px;
+    margin: 12px;
     background: #ff8ac3;
     color: white;
     text-decoration: none;
+    font-size: 12px;
     border: 4px solid #ff54a7;
     box-shadow: 0 0 0 4px #ff8ac3;
-    font-size: 12px;
-    transition: transform 0.1s ease, background 0.15s;
-    image-rendering: pixelated;
+    transition: transform 0.1s ease, filter 0.1s ease;
+    cursor: url("assets/cursor.png") 0 0, auto !important;
+    position: relative;
+    z-index: 50;
 }
 
-.pixel-btn:hover {
+/* Hover — оба режима одинаково красивые */
+.pixel-btn:hover,
+.btn:hover,
+.project-btn:hover {
+    transform: scale(0.94);
+    filter: brightness(0.9);
+}
+
+/* Press / Active click */
+.pixel-btn:active,
+.btn:active,
+.project-btn:active {
+    transform: scale(0.88);
+    filter: brightness(0.75);
+}
+
+/* Light theme hover colors */
+body:not(.dark-mode) .pixel-btn:hover,
+body:not(.dark-mode) .btn:hover,
+body:not(.dark-mode) .project-btn:hover {
     background: #ff6fb5;
+    border-color: #ff3c94;
+    box-shadow: 0 0 0 4px #ff3c94;
 }
 
-.pixel-btn:active {
-    transform: scale(0.90);
-    background: #ff54a7;
-    box-shadow: 0 0 0 4px #ff54a7;
+/* Light theme active click */
+body:not(.dark-mode) .pixel-btn:active,
+body:not(.dark-mode) .btn:active,
+body:not(.dark-mode) .project-btn:active {
+    background: #ff549f;
+    border-color: #e5257f;
+    box-shadow: 0 0 0 4px #e5257f;
 }
 
-/* ===== SECTIONS ===== */
-
-section {
-    margin-top: 50px;
+/* Dark theme hover */
+body.dark-mode .pixel-btn:hover,
+body.dark-mode .btn:hover,
+body.dark-mode .project-btn:hover {
+    background: #b63cd5;
+    border-color: #9023ad;
+    box-shadow: 0 0 0 4px #9023ad;
 }
 
-/* ===== SKILLS TAGS ===== */
+/* Dark theme press */
+body.dark-mode .pixel-btn:active,
+body.dark-mode .btn:active,
+body.dark-mode .project-btn:active {
+    background: #9c2db7;
+    border-color: #7b1f92;
+    box-shadow: 0 0 0 4px #7b1f92;
+}
+
+
+/* =========================
+         SKILLS TAGS
+========================= */
 
 .skills {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .tag {
     display: inline-block;
-    margin: 5px;
-    padding: 8px 12px;
+    padding: 10px 14px;
     background: #ffb6d9;
-    color: #fff;
+    color: white;
     border: 3px solid #ff7fbc;
-    font-size: 10px;
     box-shadow: 0 0 0 3px #ffb6d9;
-    image-rendering: pixelated;
+    margin: 6px;
+    font-size: 10px;
 }
 
-/* ===== PROJECT CARDS ===== */
+
+/* =========================
+        PROJECT CARDS
+========================= */
 
 .project-card {
     background: #ffe1f0;
     border: 4px solid #ff94c6;
-    padding: 20px;
+    padding: 22px;
     margin-top: 25px;
     box-shadow: 0 0 0 4px #ffc3dd;
     text-align: left;
-    font-size: 11px;
 }
 
-.project-card h3 {
-    color: #ff4fa3;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px #ffb7d5;
-}
 
-.project-card p {
-    color: #ff5fae;
-}
+/* =========================
+      BACKGROUND EFFECTS
+========================= */
 
-/* ===== SMALL BUTTONS INSIDE PROJECTS ===== */
-
-.btn {
-    display: inline-block;
-    padding: 8px 14px;
-    margin-top: 10px;
-    background: #ff8ac3;
-    color: white;
-    text-decoration: none;
-    border: 3px solid #ff54a7;
-    box-shadow: 0 0 0 3px #ff8ac3;
-    font-size: 10px;
-    transition: transform 0.1s ease;
-    image-rendering: pixelated;
-}
-
-.btn:active {
-    transform: scale(0.90);
-    background: #ff54a7;
-}
-
-/* ===== FALLING PIXEL HEARTS ===== */
-
-.hearts {
-    pointer-events: none;
+.background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    z-index: 20;
-}
-
-.heart {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-image: url("https://i.imgur.com/u7S3k5Y.png");
     background-size: cover;
-    animation: fall 7s linear infinite;
-    image-rendering: pixelated;
-    opacity: 0.85;
+    opacity: 0.12;
+    z-index: -1;
+    pointer-events: none;
 }
-
-@keyframes fall {
-    0% {
-        transform: translateY(-50px) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(110vh) scale(1.2);
-        opacity: 0;
-    }
-}
-
-/* ===== RETRO GAME SCREEN EFFECT ===== */
 
 .screen-effect {
     position: fixed;
@@ -205,16 +267,15 @@ section {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 30;
     mix-blend-mode: overlay;
-    opacity: 0.25;
     background-image: repeating-linear-gradient(
         to bottom,
-        rgba(255, 150, 200, 0.15) 0px,
-        rgba(255, 150, 200, 0.15) 2px,
-        rgba(0, 0, 0, 0.1) 3px,
-        rgba(0, 0, 0, 0.1) 4px
+        rgba(255, 150, 200, 0.18) 0px,
+        rgba(255, 150, 200, 0.18) 2px,
+        rgba(0, 0, 0, 0.15) 4px
     );
+    opacity: 0.22;
+    z-index: -1;
 }
 
 .glow {
@@ -224,33 +285,103 @@ section {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 31;
-    background: radial-gradient(circle at center,
-        rgba(255, 200, 230, 0.2) 0%,
-        rgba(255, 100, 180, 0.05) 40%,
-        rgba(0, 0, 0, 0) 80%
-    );
-}
-/* ===== QA LIST STYLE ===== */
-
-.project-card ul {
-    margin-top: 12px;
-    margin-left: 15px;
+    background: radial-gradient(circle,
+        rgba(255, 150, 200, 0.3) 0%,
+        rgba(0,0,0,0) 70%);
+    z-index: -1;
 }
 
-.project-card li {
-    font-size: 11px;
-    margin-bottom: 8px;
-    color: #ff5fae;
-    list-style: "💗 ";
-    image-rendering: pixelated;
+
+/* =========================
+        FALLING HEARTS
+========================= */
+
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 100;
 }
-/* ===== CUSTOM PIXEL CURSOR ===== */
-html, body {
+
+.heart {
+    position: absolute;
+    top: -20px;
+    width: 25px;
+    height: 25px;
+    background-image: url("assets/heart.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(120vh) translateX(30px);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+    LINKS GLOBAL RESET
+========================= */
+
+a {
+    color: inherit;
+    text-decoration: none;
     cursor: url("assets/cursor.png") 0 0, auto;
 }
 
-body, a, button, .pixel-btn, .btn {
-    cursor: url("assets/cursor.png") 0 0, auto !important;
+/* FIX: Beautiful hover in LIGHT MODE */
+body:not(.dark-mode) .pixel-btn:hover,
+body:not(.dark-mode) .btn:hover,
+body:not(.dark-mode) .project-btn:hover {
+    background: #ff4fa3;
+    border-color: #e12582;
+    box-shadow: 0 0 0 4px #e12582;
+    transform: scale(0.94);
+    filter: brightness(1.05);
 }
 
+/* FIX: Beautiful click effect in LIGHT MODE */
+body:not(.dark-mode) .pixel-btn:active,
+body:not(.dark-mode) .btn:active,
+body:not(.dark-mode) .project-btn:active {
+    background: #ff2b8e;
+    border-color: #c51569;
+    box-shadow: 0 0 0 4px #c51569;
+    transform: scale(0.88);
+    filter: brightness(0.85);
+}
+
+/* THEME BUTTON — dark mode color fix */
+body.dark-mode .theme-toggle {
+    background: #c953e9;
+    border-color: #a82ecb;
+    box-shadow: 0 0 0 4px #c953e9;
+    color: white;
+}
+
+/* Hover */
+body.dark-mode .theme-toggle:hover {
+    background: #b244d6;     
+    border-color: #8d1faf;
+    box-shadow: 0 0 0 4px #8d1faf;
+    transform: scale(0.94);
+}
+
+/* Active */
+body.dark-mode .theme-toggle:active {
+    transform: scale(0.88);
+    background: #9c33c2;
+    border-color: #75148f;
+}
